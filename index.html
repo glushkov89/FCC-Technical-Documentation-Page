@@ -41,6 +41,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>JavaScript Objects</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
@@ -66,7 +67,7 @@
         <section class="main-section" id="Object_basics">
             <header>Object basics</header>
             <p>An object is a collection of related data and/or functionality (which usually consists of several variables and functions — which are called properties and methods when they are inside objects.). An object like this is referred to as an <strong>object literal</strong>                — we've literally written out the object contents as we've come to create it.</p>
-            <code>var person = {
+            <pre><code>var person = {
                 name: ['Bob', 'Smith'],
                 age: 32,
                 gender: 'male',
@@ -77,7 +78,7 @@
                 greeting: function() {
                   alert('Hi! I\'m ' + this.name[0] + '.');
                 }
-              };</code>
+              };</code></pre>
             <p>The value of an object member can be pretty much anything — in our person object we've got a string, a number, two arrays, and two functions. The first four items are data items, and are referred to as the object's <strong>properties.</strong>                The last two items are functions that allow the object to do something with that data, and are referred to as the object's <strong>methods.</strong></p>
         </section>
 
@@ -85,29 +86,29 @@
             <header>Dot notation</header>
             <p>The object name (person) acts as the <strong>namespace</strong> — it must be entered first to access anything <strong>encapsulated</strong> inside the object. Next you write a dot, then the item you want to access — this can be the name of
                 a simple property, an item of an array property, or a call to one of the object's methods, for example:</p>
-            <code>person.age
-                        person.interests[1]
-                        person.bio()</code>
+            <pre><code>person.age
+person.interests[1]
+person.bio()</code></pre>
             <p>It is even possible to make the value of an object member another object thus creating a <strong>sub-namespace.</strong></p>
-            <code>var person = {
+            <pre><code>var person = {
                     name : {
                         first: 'Bob',
                         last: 'Smith'
                       },
                 }
-                console.log(person.name.first);
-                console.log(person.name.last);
-            </code>
+console.log(person.name.first);
+console.log(person.name.last);
+            </code></pre>
         </section>
 
         <section class="main-section" id="Bracket_notation">
             <header>Bracket notation</header>
             <p>There is another way to access object properties — using bracket notation. Instead of using these:</p>
-            <code>person.age
-                    person.name.first</code>
+            <pre><code>person.age
+person.name.first</code></pre>
             <p>You can use</p>
-            <code>person['age']
-                    person['name']['first']</code>
+            <pre><code>person['age']
+person['name']['first']</code></pre>
             <p>This looks very similar to how you access the items in an array, and it is basically the same thing — instead of using an index number to select an item, you are using the name associated with each member's value. It is no wonder that objects
                 are sometimes called associative arrays — they map strings to values in the same way that arrays map numbers to values.</p>
         </section>
@@ -117,16 +118,16 @@
             <p>So far we've only looked at retrieving (or <strong>getting</strong>) object members — you can also <strong>set</strong> (update) the value of object members by simply declaring the member you want to set (using dot or bracket notation), like
                 this:
             </p>
-            <code>person.age = 45;
-                        person['name']['last'] = 'Cratchit';</code>
+            <pre><code>person.age = 45;
+person['name']['last'] = 'Cratchit';</code></pre>
             <p>Setting members doesn't just stop at updating the values of existing properties and methods; you can also create completely new members.</p>
-            <code>person['eyes'] = 'hazel';
-                    person.farewell = function() { alert("Bye everybody!"); }</code>
+            <pre><code>person['eyes'] = 'hazel';
+person.farewell = function() { alert("Bye everybody!"); }</code></pre>
             <p>One useful aspect of bracket notation is that it can be used to set not only member values dynamically, but member names too. Let's say we wanted users to be able to store custom value types in their people data, by typing the member name
                 and value into two text inputs? We could get those values like this:</p>
-            <code>var myDataName = nameInput.value;
-        var myDataValue = nameValue.value;
-        person[myDataName] = myDataValue;</code>
+            <pre><code>var myDataName = nameInput.value;
+var myDataValue = nameValue.value;
+person[myDataName] = myDataValue;</code></pre>
 
         </section>
 
@@ -134,7 +135,7 @@
             <header>What is this</header>
             <p>The <code>this</code> keyword refers to the current object the code is being written inside — so in this case this is equivalent to person. So why not just write person instead? When we start creating constructors, etc., this is very useful
                 — it will always ensure that the correct values are used when a member's context changes (e.g. two different person object instances may have different names, but will want to use their own name when saying their greeting).</p>
-            <code>var person1 = {
+            <pre><code>var person1 = {
         name: 'Chris',
         greeting: function() {
           alert('Hi! I\'m ' + this.name + '.');
@@ -146,7 +147,7 @@
         greeting: function() {
           alert('Hi! I\'m ' + this.name + '.');
         }
-      }</code>
+      }</code></pre>
             <p>In this case, person1.greeting() will output "Hi! I'm Chris."; person2.greeting() on the other hand will output "Hi! I'm Brian.", even though the method's code is exactly the same in each case. As we said earlier, this is equal to the object
                 the code is inside — this isn't hugely useful when you are writing out object literals by hand, but it really comes into its own when you are dynamically generating objects (for example using constructors). It will all become clearer later
                 on.
@@ -157,7 +158,7 @@
             <header>You ve been using objects all along</header>
             <p>Every time you are using a built-in browser API or JavaScript object, you are using objects, because such features are built using exactly the same kind of object structures that we've been looking at here, albeit more complex ones than our
                 own basic custom examples. So when you use string methods like:</p>
-            <code>myString.split(',');</code>
+            <pre><code>myString.split(',');</code></pre>
             <p>You are using a method available on an instance of the String class. Every time you create a string in your code, that string is automatically created as an instance of String, and therefore has several common methods/properties available
                 on it.</p>
         </section>
