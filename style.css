@@ -2,3 +2,21 @@
     text-decoration: none;
     color: inherit;
 }
+
+pre {
+    background: #eeeded;
+    border: 1px solid rgb(143, 141, 141);
+    border-radius: 5px;
+    color: rgb(92, 92, 92);
+    page-break-inside: auto;
+    font-family: monospace;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 1.6em;
+    width: fit-content;
+    max-width: 100%;
+    overflow: auto;
+    padding: 1em 1.5em;
+    display: block;
+    word-wrap: break-word;
+}
