@@ -1,7 +1,12 @@
-.nav-link {
-    text-decoration: none;
-    color: inherit;
+/******TEMP*******/
+
+nav {
+    border: 1px solid black;
+    ;
 }
+
+
+/*****************/
 
 pre {
     background: #eeeded;
@@ -19,4 +24,43 @@ pre {
     padding: 1em 1.5em;
     display: block;
     word-wrap: break-word;
+}
+
+header {
+    font-size: larger;
+    font-weight: bolder;
+}
+
+
+/********Navigation**********/
+
+nav {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    /***/
+    height: 100vh;
+    width: 23vw;
+    /***/
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-content: stretch;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+nav>header {
+    text-align: center;
+}
+
+main {
+    margin-left: 23vw;
+}
+
+footer {
+    margin-left: 23vw;
 }
